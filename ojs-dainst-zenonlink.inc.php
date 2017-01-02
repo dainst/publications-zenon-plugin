@@ -88,13 +88,34 @@ class ojsDainstZenonlink extends PubIdPlugin {
 	}
 
 	/**
+	 * @see PubIdPlugin::getPubIdMetadataFile()
+	 */
+	function getPubIdMetadataFile() {
+
+		return $this->getTemplatePath().'template.tpl';
+	}
+	
+	/**
+	 * @see PubIdPlugin::getSettingsFormName()
+	 */
+	function getSettingsFormName() {
+		return 'classes.zenonlinkForm';
+	}
+	
+	/**
 	 * @see PubIdPlugin::verifyData()
 	 */
 	function verifyData($fieldName, $fieldValue, &$pubObject, $journalId, &$errorMsg) {
 		return true;
 	}
+	
+	function isEnabled($pubObjectType, $journalId) {
+		return ($pubObjectType == 'Article');
+	}
 
 
 }
+
+
 
 ?>
