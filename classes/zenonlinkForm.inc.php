@@ -12,6 +12,7 @@
  *
  * @brief Form for journal managers to setup URN plugin
  */
+/*
 error_reporting(E_ALL & ~ E_DEPRECATED);
 ini_set('display_errors', 'on');//*/
 
