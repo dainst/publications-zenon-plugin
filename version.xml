@@ -10,7 +10,7 @@
 <version>
 	<application>ojs-dainst-zenonlink</application>
 	<type>plugins.pubIds</type>
-	<release>0.0.0.1</release>
+	<release>1.0.0.0</release>
 	<date>2017-01-02</date>
 	<lazy-load>1</lazy-load>
 	<class>ojsDainstZenonlink</class>
