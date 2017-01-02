@@ -1,0 +1,16 @@
+================================
+=== OJS DNB URN Plugin
+=== Version: 1.2
+=== Author: Božana Bokan <bozana.bokan@cedis.fu-berlin.de>
+    Center for Digital Systems (CeDiS), Freie Universität Berlin
+=== Last update: September 25, 2015  
+================================
+
+About
+-----
+Super small Plugin to show Zenonlinks in the the meta-sector of Articles, wich were stored by the OJS-Dainst-Importer.
+
+
+System Requirements
+-------------------
+Same requirements as the OJS 2.4.6 core.
