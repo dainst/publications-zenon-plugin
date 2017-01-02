@@ -10,7 +10,7 @@
  *
  */
 
-require_once('ojs-dainst-zenonlink.inc.php');
-return new ojsDainstZenonlink();
+require_once('zenonlinkPubIdsPlugin.inc.php');
+return new zenonlinkPubIdsPlugin();
 
 ?>

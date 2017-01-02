@@ -8,10 +8,10 @@
 
   -->
 <version>
-	<application>zenon</application>
+	<application>zenonlink</application>
 	<type>plugins.pubIds</type>
 	<release>1.0.0.0</release>
 	<date>2017-01-02</date>
 	<lazy-load>1</lazy-load>
-	<class>zenon</class>
+	<class>zenonlinkPubIdsPlugin</class>
 </version>
