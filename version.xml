@@ -8,7 +8,7 @@
 
   -->
 <version>
-	<application>ojs-dainst-zenonlink</application>
+	<application>zenon</application>
 	<type>plugins.pubIds</type>
 	<release>1.0.0.0</release>
 	<date>2017-01-02</date>
