@@ -24,7 +24,7 @@ class ojsDainstZenonlink extends PubIdPlugin {
 	 * @see PKPPlugin::getName()
 	 */
 	function getName() {
-		return 'ojsDainstZenonlink';
+		return 'zenon';
 	}
 
 	/**
