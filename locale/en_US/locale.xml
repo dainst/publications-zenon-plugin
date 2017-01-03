@@ -11,6 +11,7 @@
 
 	<!-- plugin -->
 	<message key="plugins.pubIds.ojsDainstZenonlink.description">Show Zenon links if present</message>
+	<message key="plugins.pubIds.urn.manager.settings.urnSettings">Zenon Links settings</message>
 
 
 </locale>
