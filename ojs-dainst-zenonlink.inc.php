@@ -92,7 +92,7 @@ class ojsDainstZenonlink extends PubIdPlugin {
 	 */
 	function getPubIdMetadataFile() {
 
-		return $this->getTemplatePath().'template.tpl';
+		return $this->getTemplatePath().'templates/metadata.tpl';
 	}
 	
 	/**

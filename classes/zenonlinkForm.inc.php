@@ -34,7 +34,7 @@ class zenonlinkForm extends Form {
 	 * @param $journalId integer
 	 */
 	function zenonlinkForm(&$plugin, $journalId) {
-		parent::Form($plugin->getTemplatePath() . 'template.tpl');
+		parent::Form($plugin->getTemplatePath() . '/templates/form.tpl');
 	}
 
 
