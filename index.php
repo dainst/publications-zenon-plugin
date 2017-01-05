@@ -10,7 +10,7 @@
  *
  */
 
-require_once('zenonlinkPubIdsPlugin.inc.php');
-return new zenonlinkPubIdsPlugin();
+require_once('zenon.inc.php');
+return new zenon();
 
 ?>
