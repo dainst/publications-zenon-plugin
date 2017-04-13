@@ -54,6 +54,14 @@ class zenon extends PubIdPlugin {
 	 * @see PubIdPlugin::getPubId()
 	 */
 	function getPubId(&$pubObject, $preview = false) {
+
+		$zenonAsSetting = $pubObject->getData("zenon_id");
+		if ($zenonAsSetting !== null) {
+			$type = $this->getPubObjectType($pubObject);
+			if ($type == "Article") {
+				$this->setStoredPubId($pubObject, $type, $zenonAsSetting);
+			}
+		}
 		return $pubObject->getStoredPubId($this->getPubIdType());
 	}
 
@@ -86,20 +94,31 @@ class zenon extends PubIdPlugin {
 	}
 
 	/**
-	 * @see PubIdPlugin::getDAOFieldNames()
-	 */
-	function getDAOFieldNames() {
-		return array('pub-id::other::zenon');
-	}
-
-	/**
 	 * @see PubIdPlugin::getPubIdMetadataFile()
 	 */
 	function getPubIdMetadataFile() {
-
-		return $this->getTemplatePath().'template.tpl';
+		return $this->getTemplatePath().'templates/metadata.tpl';
 	}
-	
+
+	/**
+	 * @see PubIdPlugin::getDAOFieldNames()
+	 */
+	function getDAOFieldNames() {
+		return array('zenon_id');
+	}
+
+	/**
+	 * @see PubIdPlugin::getFormFieldNames()
+	 */
+	function getFormFieldNames() {
+		return array('zenon_id');
+	}
+
+	function getExcludeFormFieldName() {
+		return "yolon";
+	}
+
+
 	/**
 	 * @see PubIdPlugin::getSettingsFormName()
 	 */
@@ -117,6 +136,7 @@ class zenon extends PubIdPlugin {
 	function isEnabled($pubObjectType, $journalId) {
 		return ($pubObjectType == 'Article');
 	}
+
 
 
 }
