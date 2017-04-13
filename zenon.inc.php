@@ -15,7 +15,6 @@
 import('classes.plugins.PubIdPlugin');
 
 class zenon extends PubIdPlugin {
-
 	/**
 	 * @see PubIdPlugin::register()
 	 */
