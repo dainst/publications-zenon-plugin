@@ -42,11 +42,7 @@ try {
 		if ($error !== NULL && in_array($error['type'], array(E_ERROR, E_PARSE, E_CORE_ERROR, E_CORE_WARNING, E_COMPILE_ERROR, E_COMPILE_WARNING))) {
 			$return = array(
 				'success'	=> false,
-				'message'	=> "500 / Internal Server Error" . ": {$error['message']} in line {$error['line']} of {$error['file']}",
-				'test'		=> realpath(dirname(__FILE__)),
-				'test2'		=> realpath(dirname($_SERVER['SCRIPT_FILENAME'])),
-				'test3'		=> realpath($_SERVER['DOCUMENT_ROOT']),
-				'test4'		=> $_SERVER
+				'message'	=> "500 / Internal Server Error" . ": {$error['message']} in line {$error['line']} of {$error['file']}"
 			);
 
 			http_response_code(200);
@@ -54,6 +50,9 @@ try {
 			echo json_encode($return);
 		}
 	});
+
+	$path = (file_exists('ojspath')) ? file_get_contents('ojspath') : '../../../tools/bootstrap.inc.php';
+	require_once realpath($path);
 
 	// set up error reporting 2nd time becaise OJS may change it
 	if ($errorReporting) {
@@ -64,8 +63,6 @@ try {
 		error_reporting(false);
 	}
 
-	// require OJS
-	require_once realpath('../../../tools/bootstrap.inc.php');
 
 	// get data
 	$dao = new DAO();
