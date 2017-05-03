@@ -18,16 +18,6 @@ $errorReporting = false;
 
 try {
 
-	// require OJS
-	require_once realpath('../../../tools/bootstrap.inc.php');
-
-	// enabling CORS (would be a shameful webservice without)
-	if (isset($_SERVER['HTTP_ORIGIN'])) {
-		header("Access-Control-Allow-Origin: {$_SERVER['HTTP_ORIGIN']}");
-		header('Access-Control-Allow-Credentials: true');
-		header('Access-Control-Max-Age: 86400');    // cache for 1 day
-	}
-
 	// set up error reporting
 	if ($errorReporting) {
 		error_reporting(E_ALL);
@@ -36,6 +26,14 @@ try {
 		ini_set ("display_errors", "0");
 		error_reporting(false);
 	}
+
+	// enabling CORS (would be a shameful webservice without)
+	if (isset($_SERVER['HTTP_ORIGIN'])) {
+		header("Access-Control-Allow-Origin: {$_SERVER['HTTP_ORIGIN']}");
+		header('Access-Control-Allow-Credentials: true');
+		header('Access-Control-Max-Age: 86400');    // cache for 1 day
+	}
+
 
 	// register shutdown function
 	register_shutdown_function(function()  {
@@ -52,6 +50,18 @@ try {
 			echo json_encode($return);
 		}
 	});
+
+	// set up error reporting 2nd time becaise OJS may change it
+	if ($errorReporting) {
+		error_reporting(E_ALL);
+		ini_set('display_errors', 'on');
+	}  else {
+		ini_set ("display_errors", "0");
+		error_reporting(false);
+	}
+
+	// require OJS
+	require_once realpath('../../../tools/bootstrap.inc.php');
 
 	// get data
 	$dao = new DAO();
