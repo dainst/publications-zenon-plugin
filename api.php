@@ -89,7 +89,10 @@ try {
 } catch (\Exception $e) {
 	$return = array(
 		'success'	=> false,
-		'message'	=> $e->getMessage()
+		'message'	=> $e->getMessage(),
+		'test'		=> dirname(__FILE__),
+		'test2'		=> realpath(dirname($_SERVER['SCRIPT_FILENAME'])),
+		'test3'		=> realpath($_SERVER['DOCUMENT_ROOT'])
 	);
 
 	http_response_code(200);
