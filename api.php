@@ -43,7 +43,7 @@ try {
 			$return = array(
 				'success'	=> false,
 				'message'	=> "500 / Internal Server Error" . ": {$error['message']} in line {$error['line']} of {$error['file']}",
-				'test'		=> dirname(__FILE__),
+				'test'		=> realpath(dirname(__FILE__)),
 				'test2'		=> realpath(dirname($_SERVER['SCRIPT_FILENAME'])),
 				'test3'		=> realpath($_SERVER['DOCUMENT_ROOT']),
 				'test4'		=> $_SERVER
