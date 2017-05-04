@@ -70,7 +70,7 @@ try {
 	$zid = isset($_GET['zenonid']) ? (int) $_GET['zenonid'] : false;
 
 	$sql = "select 
-			  setting_value, 
+			  replace(setting_value,'&dfm',''), 
 			  concat('$url', j.path, '/', a.article_id) as url
 			from 
 				article_settings as a_s
@@ -82,11 +82,6 @@ try {
 	$res = $dao->retrieve($sql);
 	$box = $res->getAssoc();
 	$res->Close();
-
-	// remove stuff
-	$box = array_map(function($item) {
-		return preg_replace("/\&dfm/", "", $item);
-	}, $box);
 
 	// send data
 	echo json_encode((object) $box);
