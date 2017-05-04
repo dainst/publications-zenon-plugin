@@ -52,7 +52,7 @@ try {
 	});
 
 	// require OJS context
-	require_once (file_exists('ojspath')) ? preg_replace("/\r|\n/", "", file_get_contents('ojspath')); : realpath('../../../tools/bootstrap.inc.php');
+	require_once (file_exists('ojspath')) ? preg_replace("/\r|\n/", "", file_get_contents('ojspath')) : realpath('../../../tools/bootstrap.inc.php');
 
 	// set up error reporting 2nd time becaise OJS may change it
 	if ($errorReporting) {
