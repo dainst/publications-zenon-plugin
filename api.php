@@ -78,7 +78,7 @@ try {
 				left join journals as j on j.journal_id = a.journal_id
 			where 
 				setting_name = 'pub-id::other::zenon'" .
-	$sql .= $zid ? " and replace(setting_value,'&dfm','') = $zid" : '';
+	$sql .= $zid ? " and setting_value in('$zid', '$zid&dfm')" : '';
 	$res = $dao->retrieve($sql);
 	$box = $res->getAssoc();
 	$res->Close();
