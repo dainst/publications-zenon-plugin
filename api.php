@@ -70,7 +70,7 @@ try {
 	$zid = isset($_GET['zenonid']) ? (int) $_GET['zenonid'] : false;
 
 	$sql = "select 
-			  replace(setting_value,'&dfm',''), 
+			  replace(setting_value,'&dfm','') as zenonid, 
 			  concat('$url', j.path, '/', a.article_id) as url
 			from 
 				article_settings as a_s
@@ -78,7 +78,7 @@ try {
 				left join journals as j on j.journal_id = a.journal_id
 			where 
 				setting_name = 'pub-id::other::zenon'" .
-	$sql .= $zid ? " and a.article_id = $zid" : '';
+	$sql .= $zid ? " and replace(setting_value,'&dfm','') = $zid" : '';
 	$res = $dao->retrieve($sql);
 	$box = $res->getAssoc();
 	$res->Close();
