@@ -83,6 +83,11 @@ try {
 	$box = $res->getAssoc();
 	$res->Close();
 
+	// remove stuff
+	$box = array_map(function($item) {
+		return preg_replace("/\&dfm/", "", $item);
+	}, $box);
+
 	// send data
 	echo json_encode((object) $box);
 
