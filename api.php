@@ -51,8 +51,8 @@ try {
 		}
 	});
 
-	$path = (file_exists('ojspath')) ? file_get_contents('ojspath') : '../../../tools/bootstrap.inc.php';
-	require_once realpath($path);
+	// require OJS context
+	require_once (file_exists('ojspath')) ? file_get_contents('ojspath') : realpath('../../../tools/bootstrap.inc.php');
 
 	// set up error reporting 2nd time becaise OJS may change it
 	if ($errorReporting) {
