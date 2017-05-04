@@ -71,13 +71,13 @@ try {
 
 	$sql = "select 
 			  setting_value, 
-			  concat(\"$url\", j.path, '/', a.article_id) as url
+			  concat('$url', j.path, '/', a.article_id) as url
 			from 
 				article_settings as a_s
 				left join articles as a on a.article_id = a_s.article_id
 				left join journals as j on j.journal_id = a.journal_id
 			where 
-				setting_name = \"pub-id::other::zenon\"" .
+				setting_name = 'pub-id::other::zenon'" .
 	$sql .= $zid ? " and a.article_id = $zid" : '';
 	$res = $dao->retrieve($sql);
 	$box = $res->getAssoc();
