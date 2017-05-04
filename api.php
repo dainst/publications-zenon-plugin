@@ -67,7 +67,7 @@ try {
 	// get data
 	$dao = new DAO();
 	$url = Config::getVar('dainst', 'ojsDomain') . '/' . Config::getVar('dainst', 'ojsFolder') . '/';
-	$zid = isset($_GET['zenonid']) ? (int) $_GET['zenonid'] : false;
+	$zid = isset($_GET['zenonid']) ? preg_replace('/\D/', '', $_GET['zenonid']) : false;
 
 	$sql = "select 
 			  replace(setting_value,'&dfm','') as zenonid, 
