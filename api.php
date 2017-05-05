@@ -84,7 +84,7 @@ try {
 	$res->Close();
 
 	// send data
-	echo json_encode((object) $box);
+	echo json_encode((object) $box, JSON_UNESCAPED_SLASHES);
 
 
 } catch (\Exception $e) {
