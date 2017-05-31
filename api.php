@@ -85,7 +85,7 @@ try {
 				and setting_value not in ('', '(((new)))') 
 				and i.published = 1
 				and j.enabled = 1
-				and i.access_status = 1" .
+				and (i.access_status = 1 or p_a.access_status = 1)" .
 		($zid?" and a_s.setting_value in('$zid', '$zid&dfm')" :'').
 		($oao?" and p_a.access_status = 1" :'');
 	$res = $dao->retrieve($sql);
