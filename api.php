@@ -69,16 +69,24 @@ try {
 	$url = Config::getVar('dainst', 'ojsDomain') . '/' . Config::getVar('dainst', 'ojsFolder') . '/';
 	$zid = isset($_GET['zenonid']) ? preg_replace('/\D/', '', $_GET['zenonid']) : false;
 
-	$sql = "select 
-			  replace(setting_value,'&dfm','') as zenonid, 
-			  concat('$url', j.path, '/', a.article_id) as url
-			from 
-				article_settings as a_s
-				left join articles as a on a.article_id = a_s.article_id
+	$oao = false; // select open acces files only?
+
+	$sql = "select
+				replace(a_s.setting_value,'&dfm','') as zenonid, 
+				concat('$url', j.path, '/', a.article_id) as url
+			from
+				published_articles as p_a
+				left join issues as i on i.issue_id = p_a.issue_id
+				left join articles as a on a.article_id = p_a.article_id
+				left join article_settings as a_s on p_a.article_id = a_s.article_id
 				left join journals as j on j.journal_id = a.journal_id
-			where 
-				setting_name = 'pub-id::other::zenon'" .
-	$sql .= $zid ? " and setting_value in('$zid', '$zid&dfm')" : '';
+			where
+				setting_name in('pub-id::other::zenon','zenon_id') 
+				and setting_value not in ('', '(((new)))') 
+				and i.published = 1
+				and j.enabled = 1" .
+		($zid?" and a_s.setting_value in('$zid', '$zid&dfm')" :'').
+		($oao?" and p_a.access_status = 1" :'');
 	$res = $dao->retrieve($sql);
 	$box = $res->getAssoc();
 	$res->Close();
