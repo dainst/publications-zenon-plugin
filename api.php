@@ -92,6 +92,8 @@ try {
 	$res->Close();
 
 	// send data
+	http_response_code(200);
+	header('Content-Type: application/json');
 	echo json_encode((object) $box, JSON_UNESCAPED_SLASHES);
 
 
