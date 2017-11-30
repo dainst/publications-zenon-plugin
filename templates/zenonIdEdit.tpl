@@ -9,9 +9,16 @@
 		{assign var=formArea value=true}
 
 		{fbvFormSection}
-			{fbvElement type="text" label="plugins.pubIds.zenon.displayName" id="zenonId" value=$storedPubId size=$fbvStyles.size.MEDIUM inline=true }
+			{fbvElement type="text" label="plugins.pubIds.zenon.label" id="zenonId" value=$storedPubId size=$fbvStyles.size.MEDIUM inline=true }
 		{/fbvFormSection}
 
 	{/fbvFormArea}
 
+	{if $storedPubId}
+		<a href="{$pubIdPlugin->getResolvingURL(1, $storedPubId)}">	{$pubIdPlugin->getResolvingURL(1, $storedPubId)}</a>
+	{else}
+		<a href="https://zenon.dainst.org/Search/Results?lookfor={$pubObject->getLocalizedTitle()}&type=Title&limit=20&sort=relevance" target="_blank">
+			{translate key="plugins.pubIds.zenon.lookup"}
+		</a>
+	{/if}
 {/if}

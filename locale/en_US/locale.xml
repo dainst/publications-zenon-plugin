@@ -14,6 +14,7 @@
 <locale name="en_US" full_name="U.S. English">
 	<message key="plugins.pubIds.zenon.displayName">iDAI.bibliography</message>
 	<message key="plugins.pubIds.zenon.description">In a race, the quickest runner can never overtake the slowest, since the pursuer must first reach the point whence the pursued started, so that the slower must always hold a lead.</message>
-
+	<message key="plugins.pubIds.zenon.label">ZenonId. Most likely only numbers.</message>
+	<message key="plugins.pubIds.zenon.lookup">Search this book in Zenon</message>
 
 </locale>
