@@ -15,6 +15,14 @@ import('classes.plugins.PubIdPlugin');
 
 class zenonIdPlugin extends PubIdPlugin {
 
+	function getPubId($pubObject) {
+		$storedPubId = $pubObject->getStoredPubId($this->getPubIdType());
+		error_log("%%%%%%" . $storedPubId);
+		if ($storedPubId) return $storedPubId;
+
+		return $pubObject->getData('zenonId');
+	}
+
 
 	function getDisplayName() {
 		return __('plugins.pubIds.zenon.displayName');
@@ -41,7 +49,7 @@ class zenonIdPlugin extends PubIdPlugin {
 	}
 
 	function getResolvingURL($contextId, $pubId) {
-		return "https://zenon.dainst.org/" . $pubId;
+		return "https://zenon.dainst.org/Record/" . $pubId;
 	}
 
 	function getPubIdMetadataFile() {
@@ -69,7 +77,7 @@ class zenonIdPlugin extends PubIdPlugin {
 	}
 
 	function getFormFieldNames() {
-		return array('pub-id::other::zenon');
+		return array("zenonId"); //'pub-id::other::zenon'
 	}
 
 	function getDAOFieldNames() {
@@ -86,15 +94,17 @@ class zenonIdPlugin extends PubIdPlugin {
 	}
 
 	function constructPubId($pubIdPrefix, $pubIdSuffix, $contextId) {
+
 		return "";
 	}
 
 	function getAssignFormFieldName() {
-		return '';
+		error_log("HALLO" . get_class($this));
+		return 'pub-id::other::zenon';
 	}
 
 	function getPrefixFieldName() {
-		return '';
+		return '--';
 	}
 
 	function getSuffixFieldName() {
