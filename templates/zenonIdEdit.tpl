@@ -15,7 +15,7 @@
 	{/fbvFormArea}
 
 	{if $storedPubId}
-		<a href="{$pubIdPlugin->getResolvingURL(1, $storedPubId)}">	{$pubIdPlugin->getResolvingURL(1, $storedPubId)}</a>
+		<a href="{$pubIdPlugin->getResolvingURL(1, $storedPubId)}" target="_blank">	{$pubIdPlugin->getResolvingURL(1, $storedPubId)}</a>
 	{else}
 		<a href="https://zenon.dainst.org/Search/Results?lookfor={$pubObject->getLocalizedTitle()}&type=Title&limit=20&sort=relevance" target="_blank">
 			{translate key="plugins.pubIds.zenon.lookup"}
