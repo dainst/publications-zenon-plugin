@@ -16,12 +16,31 @@ import('classes.plugins.PubIdPlugin');
 class zenonIdPlugin extends PubIdPlugin {
 
 	function getPubId($pubObject) {
+
+		$zenonId = $pubObject->getData('zenonId');
+
+		error_log("Zid" . $zenonId);
+
+
+
+		if ($zenonId) {
+			$this->setStoredPubId($pubObject, $zenonId);
+			//$pubObject->setStoredPubId($this->getPubIdType(), $zenonId);
+			$pubObject->setData('zenonId', null);
+
+			return $zenonId;
+		}
+
+
+
 		$storedPubId = $pubObject->getStoredPubId($this->getPubIdType());
-		error_log("%%%%%%" . $storedPubId);
+		error_log("sid" . $storedPubId);
+		//error_log(print_r($pubObject->_data,1));
 		if ($storedPubId) return $storedPubId;
 
-		return $pubObject->getData('zenonId');
+		return "";
 	}
+
 
 
 	function getDisplayName() {
@@ -68,6 +87,7 @@ class zenonIdPlugin extends PubIdPlugin {
 	}
 
 	function verifyData($fieldName, $fieldValue, $pubObject, $contextId, &$errorMsg) {
+		$pubObject->setData('pub-id::other::zenon', null);
 		return true;
 	}
 
@@ -90,21 +110,19 @@ class zenonIdPlugin extends PubIdPlugin {
 	 */
 
 	function getPubIdAssignFile() {
-		return "";
+		return $this->getTemplatePath().'zenonIdEdit.tpl';
 	}
 
 	function constructPubId($pubIdPrefix, $pubIdSuffix, $contextId) {
-
 		return "";
 	}
 
 	function getAssignFormFieldName() {
-		error_log("HALLO" . get_class($this));
-		return 'pub-id::other::zenon';
+		return '';
 	}
 
 	function getPrefixFieldName() {
-		return '--';
+		return '';
 	}
 
 	function getSuffixFieldName() {
