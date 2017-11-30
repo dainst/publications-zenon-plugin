@@ -16,28 +16,14 @@ import('classes.plugins.PubIdPlugin');
 class zenonIdPlugin extends PubIdPlugin {
 
 	function getPubId($pubObject) {
-
 		$zenonId = $pubObject->getData('zenonId');
-
-		error_log("Zid" . $zenonId);
-
-
-
 		if ($zenonId) {
 			$this->setStoredPubId($pubObject, $zenonId);
-			//$pubObject->setStoredPubId($this->getPubIdType(), $zenonId);
 			$pubObject->setData('zenonId', null);
-
 			return $zenonId;
 		}
-
-
-
 		$storedPubId = $pubObject->getStoredPubId($this->getPubIdType());
-		error_log("sid" . $storedPubId);
-		//error_log(print_r($pubObject->_data,1));
 		if ($storedPubId) return $storedPubId;
-
 		return "";
 	}
 
@@ -87,7 +73,7 @@ class zenonIdPlugin extends PubIdPlugin {
 	}
 
 	function verifyData($fieldName, $fieldValue, $pubObject, $contextId, &$errorMsg) {
-		$pubObject->setData('pub-id::other::zenon', null);
+		$pubObject->setData('pub-id::other::zenon', null); // THIS is rerally important. it's hack wich makes the pub-id always changable
 		return true;
 	}
 

@@ -12,7 +12,7 @@
   -->
 
 <locale name="en_US" full_name="U.S. English">
-	<message key="plugins.pubIds.zenon.displayName">ZenonId</message>
+	<message key="plugins.pubIds.zenon.displayName">iDAI.bibliography</message>
 	<message key="plugins.pubIds.zenon.description">In a race, the quickest runner can never overtake the slowest, since the pursuer must first reach the point whence the pursued started, so that the slower must always hold a lead.</message>
 
 
