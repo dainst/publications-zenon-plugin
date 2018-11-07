@@ -37,11 +37,6 @@ class zenonIdPlugin extends PubIdPlugin {
 		return __('plugins.pubIds.zenon.description');
 	}
 
-	function getTemplatePath($inCore = false) {
-		return "/srv/omp/plugins/pubIds/zenon/templates/";
-		return parent::getTemplatePath($inCore) . '/';
-	}
-
 	function getPubIdType() {
 		return 'other::zenon';
 	}
@@ -59,7 +54,6 @@ class zenonIdPlugin extends PubIdPlugin {
 	}
 
 	function getPubIdMetadataFile() {
-		//return $this->getTemplatePath().'zenonIdEdit.tpl';
 		return $this->getTemplateResource('zenonIdEdit.tpl');
 	}
 
@@ -98,7 +92,7 @@ class zenonIdPlugin extends PubIdPlugin {
 	 */
 
 	function getPubIdAssignFile() {
-		return $this->getTemplatePath().'zenonIdEdit.tpl';
+		return $this->getTemplateResource('zenonIdEdit.tpl');
 	}
 
 	function constructPubId($pubIdPrefix, $pubIdSuffix, $contextId) {
