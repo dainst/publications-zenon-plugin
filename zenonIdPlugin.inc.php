@@ -69,7 +69,7 @@ class zenonIdPlugin extends PubIdPlugin {
 	}
 
 	function verifyData($fieldName, $fieldValue, $pubObject, $contextId, &$errorMsg) {
-		$pubObject->setData('pub-id::other::zenon', null); // THIS is rerally important. it's hack wich makes the pub-id always changable
+		$pubObject->setData('pub-id::other::zenon', null); // THIS is really important. it's hack which makes the pub-id always changeable
 		return true;
 	}
 

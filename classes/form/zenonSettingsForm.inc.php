@@ -34,7 +34,7 @@ class zenonSettingsForm extends Form {
 
 	/**
 	 * Get the plugin.
-	 * @return URNPubIdPlugin
+	 * @return zenonIdPlugin
 	 */
 	function _getPlugin() {
 		return $this->_plugin;
@@ -45,7 +45,7 @@ class zenonSettingsForm extends Form {
 	//
 	/**
 	 * Constructor
-	 * @param $plugin URNPubIdPlugin
+	 * @param $plugin zenonIdPlugin
 	 * @param $contextId integer
 	 */
 	function __construct($plugin, $contextId) {

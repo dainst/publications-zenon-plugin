@@ -2,7 +2,6 @@
 
 {assign var=pubObjectType value=$pubIdPlugin->getPubObjectType($pubObject)}
 
-
 {if $pubObjectType == "Submission"}
 	{assign var=storedPubId value=$pubIdPlugin->getPubId($pubObject)}
 	{fbvFormArea id="pubIdZenonFormArea" class="border" title="plugins.pubIds.zenon.displayName"}
