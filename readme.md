@@ -6,3 +6,7 @@ Branches:
  * master: ojs2
  * ojs3
  * omp3
+
+## installation
+
+    git clone https://github.com/dainst/ojs-zenon-plugin.git /ojsomppath/plugins/pubIds/zenon    
