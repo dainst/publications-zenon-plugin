@@ -1,8 +1,9 @@
 {load_script context="publicIdentifiersForm" scripts=$scripts}
 
 {assign var=pubObjectType value=$pubIdPlugin->getPubObjectType($pubObject)}
+{assign var=enabledZenonPlugin value=$pubIdPlugin->isObjectTypeEnabled($pubObjectType, $currentContext->getId())}
 
-{if $pubObjectType == "Submission"}
+{if $enabledZenonPlugin}
 	{assign var=storedPubId value=$pubIdPlugin->getPubId($pubObject)}
 	{fbvFormArea id="pubIdZenonFormArea" class="border" title="plugins.pubIds.zenon.displayName"}
 		{assign var=formArea value=true}

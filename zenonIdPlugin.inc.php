@@ -87,6 +87,10 @@ class zenonIdPlugin extends PubIdPlugin {
 	}
 
 
+	function isObjectTypeEnabled($pubObjectType, $contextId) {
+		return (boolean) ($this->getSetting($contextId, "enabled") && 'Submission' == $pubObjectType );
+	}
+
 	/**
 	 * abstract functions we don't use but need to implement
 	 */
@@ -119,12 +123,9 @@ class zenonIdPlugin extends PubIdPlugin {
 		return array();
 	}
 
-	function isObjectTypeEnabled($pubObjectType, $contextId) {
-		return ("Submission" == $pubObjectType);
-	}
 
 	function getNotUniqueErrorMsg() {
-		return "[some error]";
+		return "The given ZenonId is not a unique value, i.e. it was used already.";
 	}
 
 

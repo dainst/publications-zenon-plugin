@@ -32,13 +32,7 @@ class zenonSettingsForm extends Form {
 	/** @var URNPubIdPlugin */
 	var $_plugin;
 
-	/**
-	 * Get the plugin.
-	 * @return zenonIdPlugin
-	 */
-	function _getPlugin() {
-		return $this->_plugin;
-	}
+	
 
 	//
 	// Constructor
@@ -57,7 +51,13 @@ class zenonSettingsForm extends Form {
 		$this->setData('pluginName', $plugin->getName());
 	}
 
-
+	/**
+	 * Get the plugin.
+	 * @return zenonIdPlugin
+	 */
+	function _getPlugin() {
+		return $this->_plugin;
+	}
 
 	/**
 	 * @copydoc Form::initData()
