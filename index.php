@@ -1,16 +1,19 @@
 <?php
 
 /**
- * @file index.php
- *
- *
- * @package ojsDainstZenonlink
- *
- * @brief Wrapper for ojsDainstZenonlink plugin.
- *
+ * @defgroup plugins_pubIds_urn URN PID plugin
  */
 
-require_once('zenon.inc.php');
-return new zenon();
+/**
+ * @file plugins/pubIds/zenon/index.php
+ *
+ *
+ * @ingroup plugins_pubIds_urn
+ * @brief Wrapper for URN plugin.
+ *
+ */
+require_once('zenonIdPlugin.inc.php');
+
+return new zenonIdPlugin();
 
 ?>

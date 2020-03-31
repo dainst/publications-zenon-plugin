@@ -2,16 +2,19 @@
 <!DOCTYPE locale SYSTEM "../../../../../lib/pkp/dtd/locale.dtd">
 
 <!--
-  * @file locale/de_DE/locale.xml
+  * @file plugins/pubIds/urn/locale/en_US/locale.xml
   *
+  * Copyright (c) 2014-2017 Simon Fraser University
+  * Copyright (c) 2003-2017 John Willinsky
+  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
+  *
+  * URN plugin localization strings
   -->
- 
-<locale name="de_DE" full_name="Deutsch (Deutschland)">
-	<message key="plugins.pubIds.ojsDainstZenonlink.displayName">Zenon / iDai.bibliography identifier</message>
 
-	<!-- plugin -->
-	<message key="plugins.pubIds.ojsDainstZenonlink.description">Show Zenon links if present</message>
-	<message key="plugins.pubIds.urn.manager.settings.urnSettings">Zenon Links settings</message>
-
+<locale name="en_US" full_name="U.S. English">
+	<message key="plugins.pubIds.zenon.displayName">iDAI.bibliography</message>
+	<message key="plugins.pubIds.zenon.description">In a race, the quickest runner can never overtake the slowest, since the pursuer must first reach the point whence the pursued started, so that the slower must always hold a lead.</message>
+	<message key="plugins.pubIds.zenon.label">ZenonId. Most likely only numbers.</message>
+	<message key="plugins.pubIds.zenon.lookup">Search this book in Zenon</message>
 
 </locale>
