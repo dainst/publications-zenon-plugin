@@ -63,6 +63,10 @@ class zenonApi extends server {
 			($zid ? " and a_s.setting_value = '$zid'" : '') .
 			($oao ? " and p_a.access_status = 1" : '');
 		$res = $dao->retrieve($sql);
+		print_r($sql);
+		var_dump($res);
+		
+		die;
 		$this->return["publications"] = $res->getAssoc();
 		$res->Close();
 	}

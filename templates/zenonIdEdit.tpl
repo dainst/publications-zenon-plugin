@@ -1,4 +1,6 @@
-{load_script context="publicIdentifiersForm" scripts=$scripts}
+<div>Not implemented.</div>
+
+{* {load_script context="publicIdentifiersForm" scripts=$scripts}
 
 {assign var=pubObjectType value=$pubIdPlugin->getPubObjectType($pubObject)}
 {assign var=enabledZenonPlugin value=$pubIdPlugin->isObjectTypeEnabled($pubObjectType, $currentContext->getId())}
@@ -21,4 +23,4 @@
 			{translate key="plugins.pubIds.zenon.lookup"}
 		</a>
 	{/if}
-{/if}
+{/if} *}

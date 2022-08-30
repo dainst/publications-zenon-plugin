@@ -1,13 +1,17 @@
 <?php
 
 /**
- * @file plugins/pubIds/urn/classes/form/zenonSettingsForm.inc.php
+ * @file plugins/pubIds/urn/classes/form/URNSettingsForm.inc.php
  *
+ * Copyright (c) 2014-2021 Simon Fraser University
+ * Copyright (c) 2003-2021 John Willinsky
+ * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
  *
- * @class URNSettingsForm
+ * @class zenonSettingsForm
  * @ingroup plugins_pubIds_zenon
  *
- * @brief Form for journal managers to setup zenon plugin
+ * @brief Form for journal managers to setup Zenon plugin
+ * 
  */
 
 
@@ -29,10 +33,16 @@ class zenonSettingsForm extends Form {
 		return $this->_contextId;
 	}
 
-	/** @var URNPubIdPlugin */
+	/** @var zenonIdPlugin */
 	var $_plugin;
 
-	
+	/**
+	 * Get the plugin.
+	 * @return zenonIdPlugin
+	 */
+	function _getPlugin() {
+		return $this->_plugin;
+	}
 
 	//
 	// Constructor
@@ -46,17 +56,9 @@ class zenonSettingsForm extends Form {
 		$this->_contextId = $contextId;
 		$this->_plugin = $plugin;
 
-		//parent::__construct($plugin->getTemplatePath() . 'settingsForm.tpl');
+		parent::__construct($plugin->getTemplateResource('settingsForm.tpl'));
 
 		$this->setData('pluginName', $plugin->getName());
-	}
-
-	/**
-	 * Get the plugin.
-	 * @return zenonIdPlugin
-	 */
-	function _getPlugin() {
-		return $this->_plugin;
 	}
 
 	/**
@@ -70,20 +72,14 @@ class zenonSettingsForm extends Form {
 	/**
 	 * @copydoc Form::readInputData()
 	 */
-	function readInputData() {
-		$this->readUserVars(array_keys($this->_getFormFields()));
+	function readInputData() { }
+
+	//
+	// Private helper methods
+	//
+	function _getFormFields() {
+		return array();
 	}
-
-	/**
-	 * @copydoc Form::validate()
-	 */
-	function execute() {
-		$contextId = $this->_getContextId();
-		$plugin = $this->_getPlugin();
-
-	}
-
-
 }
 
-?>
+
