@@ -13,7 +13,7 @@ msgstr ""
 "X-Generator: Weblate 3.9.1\n"
 
 msgid "plugins.pubIds.zenon.displayName"
-msgstr "Zenon"
+msgstr "Zenon-Plugin"
 
 msgid "plugins.pubIds.zenon.description"
 msgstr "Dieses Plugin ermöglicht die Zuweisung von Zenon IDs zu Publikationen in OJS und OMP."
@@ -21,5 +21,14 @@ msgstr "Dieses Plugin ermöglicht die Zuweisung von Zenon IDs zu Publikationen i
 msgid "plugins.pubIds.zenon.editor.description"
 msgstr "Datensatz ID aus <a target='_blank' href='https://zenon.dainst.org'>iDAI.bibliography/Zenon</a>."
 
+msgid "plugins.pubIds.zenon.lookup"
+msgstr "Dieses Buch im Zenon suchen."
+
 msgid "plugins.pubIds.zenon.editor.not_unique"
-msgstr "The given Zenon ID was already assigned."
+msgstr "Die angegebene Zenon-ID wurde bereits zugewiesen."
+
+msgid "plugins.pubIds.zenon.label"
+msgstr "iDAI.bibliography/Zenon"
+
+msgid "plugins.pubIds.zenon.displayFrontendLabel"
+msgstr "Druckausgaben & Rezensionen"
