@@ -1,0 +1,32 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"es_ES/>\n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.9.1\n"
+
+msgid "plugins.pubIds.zenon.displayName"
+msgstr "Zenon-Plugin"
+
+msgid "plugins.pubIds.zenon.description"
+msgstr "Este complemento permite la asignación de las ID de Zenon a las Publicaciones en OJS y OMP."
+
+msgid "plugins.pubIds.zenon.editor.description"
+msgstr "Registro de identificación de <a target='_blank' href='https://zenon.dainst.org'>iDAI.bibliography/Zenon</a>."
+
+msgid "plugins.pubIds.zenon.editor.not_unique"
+msgstr "El ID de Zenon proporcionado ya estaba asignado."
+
+msgid "plugins.pubIds.zenon.lookup"
+msgstr "Busque esta publicación en iDAI.bibliography/Zenon."
+
+msgid "plugins.pubIds.zenon.label"
+msgstr "iDAI.bibliography/Zenon"
+
+msgid "plugins.pubIds.zenon.displayFrontendLabel"
+msgstr "Ediciones impresas y Reseñas"
