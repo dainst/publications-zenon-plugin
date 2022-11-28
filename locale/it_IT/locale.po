@@ -29,4 +29,4 @@ msgid "plugins.pubIds.zenon.label"
 msgstr "iDAI.bibliography/Zenon"
 
 msgid "plugins.pubIds.zenon.displayFrontendLabel"
-msgstr "Edizioni stampate e recensioni"
+msgstr "Informazioni bibliografiche e recensioni"
