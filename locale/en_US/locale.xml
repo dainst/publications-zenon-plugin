@@ -1,3 +1,4 @@
+<!-- DEPRECATED
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE locale SYSTEM "../../../../../lib/pkp/dtd/locale.dtd">
 
@@ -17,4 +18,5 @@
 	<message key="plugins.pubIds.zenon.label">ZenonId. Most likely only numbers.</message>
 	<message key="plugins.pubIds.zenon.lookup">Search this book in Zenon</message>
 
-</locale>
+</locale> 
+-->
