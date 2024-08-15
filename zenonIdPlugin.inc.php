@@ -10,8 +10,7 @@
  * @brief zenon plugin class
  */
 
-
-import('classes.plugins.PubIdPlugin');
+use APP\plugins\PubIdPlugin;
 
 class zenonIdPlugin extends PubIdPlugin {
 
